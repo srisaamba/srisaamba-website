@@ -108,6 +108,8 @@ export default function HeroCarousel() {
           <CloudinaryImage
             onClick={() => setCurrentSlide(index)}
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              index === currentSlide ? 'bg-white' : 'bg-white/50'
+            }`}
             fill={true}
             className=""
             onMouseLeave={() => setIsAutoPlaying(true)}
