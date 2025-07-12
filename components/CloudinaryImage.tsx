@@ -17,7 +17,6 @@ export default function CloudinaryImage({
   height = 600, 
   quality = 85,
   fill = false
-  fill = false
 }: CloudinaryImageProps) {
   const cloudinaryUrl = fill 
     ? `https://res.cloudinary.com/ddhfjoo0u/image/upload/c_fill,q_${quality || "auto"}/v1752315391/${src}`
