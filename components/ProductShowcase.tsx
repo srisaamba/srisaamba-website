@@ -1,8 +1,7 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
-import { cloudinaryLoader } from '@/lib/cloudinaryLoader';
+import CloudinaryImage from '@/components/CloudinaryImage';
 
 const products = [
   {
@@ -63,13 +62,14 @@ export default function ProductShowcase() {
               className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
             >
               <div className="relative h-64 overflow-hidden">
-                <Image
-                  loader={cloudinaryLoader}
+                <CloudinaryImage
                   src={product.image}
                   alt={product.name}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  fill={true}
+                  className="group-hover:scale-110 transition-transform duration-500"
                   quality={85}
+                  width={400}
+                  height={300}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>

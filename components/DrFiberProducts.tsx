@@ -1,6 +1,5 @@
-import Image from 'next/image';
 import { Check, Shield, Heart, Zap, Leaf } from 'lucide-react';
-import { cloudinaryLoader } from '@/lib/cloudinaryLoader';
+import CloudinaryImage from '@/components/CloudinaryImage';
 
 const drFiberProducts = [
   {
@@ -59,13 +58,14 @@ export default function DrFiberProducts() {
           {drFiberProducts.map((product) => (
             <div key={product.id} className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
               <div className="relative h-80">
-                <Image
-                  loader={cloudinaryLoader}
+               <CloudinaryImage
                   src={product.image}
                   alt={product.name}
-                  fill
-                  className="object-cover"
+                 fill={true}
+                 className=""
                   quality={85}
+                 width={400}
+                 height={400}
                 />
               </div>
               <div className="p-8">

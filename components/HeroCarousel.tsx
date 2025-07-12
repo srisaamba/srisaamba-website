@@ -1,9 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { cloudinaryLoader } from '@/lib/cloudinaryLoader';
+import CloudinaryImage from '@/components/CloudinaryImage';
 
 const slides = [
   {
@@ -106,14 +105,14 @@ export default function HeroCarousel() {
       {/* Slide Indicators */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-3">
         {slides.map((_, index) => (
-          <button
-            key={index}
+          <CloudinaryImage
             onClick={() => setCurrentSlide(index)}
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentSlide ? 'bg-white scale-125' : 'bg-white/50'
-            }`}
-            onMouseEnter={() => setIsAutoPlaying(false)}
+            fill={true}
+            className=""
             onMouseLeave={() => setIsAutoPlaying(true)}
+            width={1920}
+            height={1080}
           />
         ))}
       </div>

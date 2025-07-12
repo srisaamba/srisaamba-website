@@ -1,6 +1,5 @@
-import Image from 'next/image';
 import { Check } from 'lucide-react';
-import { cloudinaryLoader } from '@/lib/cloudinaryLoader';
+import CloudinaryImage from '@/components/CloudinaryImage';
 
 const features = [
   'No Artificial Flavors',
@@ -13,13 +12,14 @@ export default function FrippyShowcase() {
   return (
     <section className="relative h-screen overflow-hidden">
       <div className="absolute inset-0">
-        <Image
-          loader={cloudinaryLoader}
+        <CloudinaryImage
           src="frippy-our-mission_yfjbhb"
           alt="Frippy Mission"
-          fill
-          className="object-cover"
+          fill={true}
+          className=""
           quality={85}
+          width={1920}
+          height={1080}
         />
       </div>
       

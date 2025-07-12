@@ -1,8 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
-import { cloudinaryLoader } from '@/lib/cloudinaryLoader';
+import CloudinaryImage from '@/components/CloudinaryImage';
 
 export default function FactoryVideo() {
   const [videoError, setVideoError] = useState(false);
@@ -24,13 +23,14 @@ export default function FactoryVideo() {
         </video>
       ) : (
         <div className="absolute inset-0">
-          <Image
-            loader={cloudinaryLoader}
+          <CloudinaryImage
             src="frippy-our-mission_yfjbhb"
             alt="Sri Saamba Production Facility"
-            fill
-            className="object-cover"
+            fill={true}
+            className=""
             quality={85}
+            width={1920}
+            height={1080}
           />
         </div>
       )}
