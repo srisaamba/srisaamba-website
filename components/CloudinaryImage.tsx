@@ -6,6 +6,7 @@ interface CloudinaryImageProps {
   height?: number;
   quality?: number;
   fill?: boolean;
+  fill?: boolean;
 }
 
 export default function CloudinaryImage({ 
@@ -16,8 +17,15 @@ export default function CloudinaryImage({
   height = 600, 
   quality = 85,
   fill = false
+  fill = false
 }: CloudinaryImageProps) {
-  const cloudinaryUrl = `https://res.cloudinary.com/ddhfjoo0u/image/upload/c_limit,w_${width},q_${quality || "auto"}/v1752315391/${src}`;
+  const cloudinaryUrl = fill 
+    ? `https://res.cloudinary.com/ddhfjoo0u/image/upload/c_fill,q_${quality || "auto"}/v1752315391/${src}`
+    : `https://res.cloudinary.com/ddhfjoo0u/image/upload/c_limit,w_${width},q_${quality || "auto"}/v1752315391/${src}`;
+
+  const imageClassName = fill 
+    ? `absolute inset-0 w-full h-full ${className}`
+    : className;
 
   if (fill) {
     return (
@@ -34,10 +42,10 @@ export default function CloudinaryImage({
     <img
       src={cloudinaryUrl}
       alt={alt}
-      className={className}
+      className={imageClassName}
       loading="lazy"
-      width={width}
-      height={height}
+      width={fill ? undefined : width}
+      height={fill ? undefined : height}
     />
   );
 }

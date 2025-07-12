@@ -57,12 +57,12 @@ export default function HeroCarousel() {
           }`}
         >
           <div className="relative h-full">
-            <Image
+            <CloudinaryImage
               src={slide.image}
               alt={slide.title}
-              className="w-full h-full object-cover"
-              width={1920}
-              height={1080}
+              fill={true}
+              className="object-cover"
+              quality={85}
             />
             <div className="absolute inset-0 bg-black/40" />
             <div className="absolute inset-0 flex items-center justify-center">
