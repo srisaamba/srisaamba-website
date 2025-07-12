@@ -58,13 +58,11 @@ export default function HeroCarousel() {
         >
           <div className="relative h-full">
             <Image
-              loader={cloudinaryLoader}
               src={slide.image}
               alt={slide.title}
-              fill
-              className="object-cover"
-              priority={index === 0}
-              quality={85}
+              className="w-full h-full object-cover"
+              width={1920}
+              height={1080}
             />
             <div className="absolute inset-0 bg-black/40" />
             <div className="absolute inset-0 flex items-center justify-center">
@@ -105,16 +103,14 @@ export default function HeroCarousel() {
       {/* Slide Indicators */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-3">
         {slides.map((_, index) => (
-          <CloudinaryImage
+          <button
+            key={index}
             onClick={() => setCurrentSlide(index)}
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
               index === currentSlide ? 'bg-white' : 'bg-white/50'
             }`}
-            fill={true}
-            className=""
+            onMouseEnter={() => setIsAutoPlaying(false)}
             onMouseLeave={() => setIsAutoPlaying(true)}
-            width={1920}
-            height={1080}
           />
         ))}
       </div>
