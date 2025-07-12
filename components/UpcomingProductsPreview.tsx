@@ -1,39 +1,58 @@
-import { Clock, ArrowRight } from 'lucide-react';
-import Link from 'next/link';
+import { Clock, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
 
 const upcomingProducts = [
   {
     id: 1,
-    name: 'All-Natural Popcorn',
-    category: 'Snacks',
-    description: 'Artisanal popcorn varieties made with natural ingredients and unique flavors.',
-    features: ['Multiple flavors', 'No artificial additives', 'Perfect for movie nights'],
-    color: 'from-yellow-400 to-orange-500',
+    name: "All-Natural Popcorn",
+    category: "Snacks",
+    description:
+      "Artisanal popcorn varieties made with natural ingredients and unique flavors.",
+    features: [
+      "Multiple flavors",
+      "No artificial additives",
+      "Perfect for movie nights",
+    ],
+    imageUrl:
+      "https://srisaamba.com/wp-content/uploads/2024/09/Caramel-scaled.jpg",
   },
   {
     id: 2,
-    name: 'Fruit Ice Pops',
-    category: 'Frozen Treats',
-    description: 'Refreshing ice pops made with real fruit juice and natural ingredients.',
-    features: ['Real fruit juice', 'No artificial colors', 'Perfect for summer'],
-    color: 'from-pink-400 to-red-500',
+    name: "Fruit Ice Pops",
+    category: "Frozen Treats",
+    description:
+      "Refreshing ice pops made with real fruit juice and natural ingredients.",
+    features: [
+      "Real fruit juice",
+      "No artificial colors",
+      "Perfect for summer",
+    ],
+    imageUrl:
+      "https://srisaamba.com/wp-content/uploads/2024/09/54467e58-5b44-46a4-95c1-1cb1300536e9.jpg",
   },
-  {
-    id: 3,
-    name: 'Baby Instant Cereal',
-    category: 'Baby Food',
-    description: 'Nutritious instant cereal specially formulated for growing babies.',
-    features: ['Age-appropriate nutrition', 'Easy to digest', 'Fortified with vitamins'],
-    color: 'from-green-400 to-teal-500',
-  },
-  {
-    id: 4,
-    name: 'Herbal Supplements',
-    category: 'Wellness',
-    description: 'Natural supplements for health and wellness, made with traditional herbs.',
-    features: ['Traditional recipes', 'Modern processing', 'Health-focused'],
-    color: 'from-purple-400 to-indigo-500',
-  },
+  // {
+  //   id: 3,
+  //   name: "Baby Instant Cereal",
+  //   category: "Baby Food",
+  //   description:
+  //     "Nutritious instant cereal specially formulated for growing babies.",
+  //   features: [
+  //     "Age-appropriate nutrition",
+  //     "Easy to digest",
+  //     "Fortified with vitamins",
+  //   ],
+  //   color: "from-green-400 to-teal-500",
+  // },
+  // {
+  //   id: 4,
+  //   name: "Herbal Supplements",
+  //   category: "Wellness",
+  //   description:
+  //     "Natural supplements for health and wellness, made with traditional herbs.",
+  //   features: ["Traditional recipes", "Modern processing", "Health-focused"],
+  //   color: "from-purple-400 to-indigo-500",
+  // },
 ];
 
 export default function UpcomingProductsPreview() {
@@ -48,16 +67,25 @@ export default function UpcomingProductsPreview() {
             </h2>
           </div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We're constantly innovating to bring you more natural, healthy products. 
-            Here's what's in our development pipeline.
+            {` We're constantly innovating to bring you more natural, healthy products. 
+            Here's what's in our development pipeline.`}
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
           {upcomingProducts.map((product) => (
-            <div key={product.id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
-              <div className={`h-32 bg-gradient-to-r ${product.color} flex items-center justify-center`}>
-                <div className="text-white text-4xl font-bold">?</div>
+            <div
+              key={product.id}
+              className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
+            >
+              <div className="relative h-48 overflow-hidden">
+                <Image
+                  src={product.imageUrl}
+                  alt={product.name}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
               </div>
               <div className="p-6">
                 <div className="text-sm font-semibold text-indigo-600 mb-2">
@@ -82,7 +110,7 @@ export default function UpcomingProductsPreview() {
           ))}
         </div>
 
-        <div className="text-center">
+        {/* <div className="text-center">
           <p className="text-lg text-gray-600 mb-6">
             Want to be notified when these products launch?
           </p>
@@ -93,7 +121,7 @@ export default function UpcomingProductsPreview() {
             Stay Updated
             <ArrowRight className="ml-2" size={20} />
           </Link>
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -1,27 +1,29 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import CloudinaryImage from '@/components/CloudinaryImage';
+import { useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import CloudinaryImage from "@/components/CloudinaryImage";
 
 const slides = [
   {
     id: 1,
-    image: 'frippy-our-mission_yfjbhb',
-    title: 'Welcome to Sri Saamba Parmeshwara Industries',
-    subtitle: 'Transforming the food and beverage industry with natural, healthy products',
+    image: "frippy-our-mission_yfjbhb",
+    title: "Welcome to Sri Saamba Parmeshwara Industries",
+    subtitle:
+      "Transforming the food and beverage industry with natural, healthy products",
   },
   {
     id: 2,
-    image: 'frippy-pineapple_wzeldc',
-    title: 'Frippy - Taste the Fruit, Feel the Joy',
-    subtitle: 'Natural fruit drinks with no artificial flavors, colors, or sweeteners',
+    image: "frippy-pineapple_wzeldc",
+    title: "Frippy - Taste the Fruit, Feel the Joy",
+    subtitle:
+      "Natural fruit drinks with no artificial flavors, colors, or sweeteners",
   },
   {
     id: 3,
-    image: 'drfibre-berry-peach_fnmpyw',
-    title: 'Dr Fiber - Soda that Heals',
-    subtitle: 'Prebiotic sodas that support digestive health naturally',
+    image: "drfibre-berry-peach_fnmpyw",
+    title: "Dr Fiber - Soda that Heals",
+    subtitle: "Prebiotic sodas that support digestive health naturally",
   },
 ];
 
@@ -53,7 +55,7 @@ export default function HeroCarousel() {
         <div
           key={slide.id}
           className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentSlide ? 'opacity-100' : 'opacity-0'
+            index === currentSlide ? "opacity-100" : "opacity-0"
           }`}
         >
           <div className="relative h-full">
@@ -73,9 +75,9 @@ export default function HeroCarousel() {
                 <p className="text-xl md:text-2xl mb-8 leading-relaxed">
                   {slide.subtitle}
                 </p>
-                <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                {/* <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105">
                   Explore Our Products
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
@@ -107,7 +109,7 @@ export default function HeroCarousel() {
             key={index}
             onClick={() => setCurrentSlide(index)}
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentSlide ? 'bg-white' : 'bg-white/50'
+              index === currentSlide ? "bg-white" : "bg-white/50"
             }`}
             onMouseEnter={() => setIsAutoPlaying(false)}
             onMouseLeave={() => setIsAutoPlaying(true)}

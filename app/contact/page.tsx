@@ -1,10 +1,11 @@
-import { Metadata } from 'next';
-import ContactForm from '@/components/ContactForm';
-import ContactInfo from '@/components/ContactInfo';
+import { Metadata } from "next";
+import ContactForm from "@/components/ContactForm";
+import ContactInfo from "@/components/ContactInfo";
 
 export const metadata: Metadata = {
-  title: 'Contact Us - Sri Saamba Parmeshwara Industries',
-  description: 'Get in touch with Sri Saamba Parmeshwara Industries. Contact us for product inquiries, business opportunities, or general information.',
+  title: "Contact Us - Sri Saamba Parmeshwara Industries",
+  description:
+    "Get in touch with Sri Saamba Parmeshwara Industries. Contact us for product inquiries, business opportunities, or general information.",
 };
 
 export default function ContactPage() {
@@ -16,8 +17,8 @@ export default function ContactPage() {
             Contact <span className="text-emerald-600">Us</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Ready to partner with us or have questions about our products? 
-            We'd love to hear from you!
+            {`Ready to partner with us or have questions about our products? We'd
+            love to hear from you!`}
           </p>
         </div>
 
